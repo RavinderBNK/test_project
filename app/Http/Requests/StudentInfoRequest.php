@@ -12,7 +12,7 @@ class StudentInfoRequest
      */
     public function __construct()
     {
-        if (empty($_GET['student']))
+        if (empty($_GET['student']) || ((int) $_GET['student'] === 0))
         {
             $this->error = ['message' => 'bad request'];
         }
